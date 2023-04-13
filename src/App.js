@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import CustomerInputs from './Components/CustomerInputs';
 
@@ -16,7 +15,7 @@ function App() {
 
   useEffect(() => {
     console.log(estimates)
-  }, [estimates])
+  })
 
 
   return (

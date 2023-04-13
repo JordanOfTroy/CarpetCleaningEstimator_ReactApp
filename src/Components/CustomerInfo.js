@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom"
+
 export default function CustomerInfo ({StartNewEstimate}) {
+    let navigate = useNavigate()
 
     function handleClick () {
         let firstName = document.getElementById('firstName').value
@@ -6,8 +9,11 @@ export default function CustomerInfo ({StartNewEstimate}) {
         let telephone = document.getElementById('telephone').value
         let email = document.getElementById('email').value
         let date = new Date()
+        let path = `/addingrooms/${firstName + lastName}`
         StartNewEstimate({firstName, lastName, telephone, email, date})
         clearInputs()
+        navigate(path)
+
     }
 
     function clearInputs () {
@@ -28,7 +34,7 @@ export default function CustomerInfo ({StartNewEstimate}) {
                 <input id='email' type='email' placeholder="email" required></input>
             </div>
             <div>
-               <button onClick={() => handleClick()}>Start Estimate!</button>
+               <button onClick={() => handleClick() }>Start Estimate!</button>
             </div>
         </div>
     )
