@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <App/>
   },
   {
-    path: '/addingrooms/:username',
+    path: '/addingrooms/:uuid',
     element: <AddingRooms/>
   }
 ])

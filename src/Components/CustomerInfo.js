@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import {v4 as uuidv4} from 'uuid'
 
 export default function CustomerInfo ({StartNewEstimate}) {
     let navigate = useNavigate()
@@ -8,11 +9,14 @@ export default function CustomerInfo ({StartNewEstimate}) {
         let lastName = document.getElementById('lastName').value
         let telephone = document.getElementById('telephone').value
         let email = document.getElementById('email').value
+        let uuid = uuidv4()
         let date = new Date()
-        let path = `/addingrooms/${firstName + lastName}`
-        StartNewEstimate({firstName, lastName, telephone, email, date})
+        let path = `/addingrooms/${uuid}`
+        StartNewEstimate({firstName, lastName, telephone, email, date, uuid})
         clearInputs()
-        navigate(path)
+        setTimeout(() => {
+            navigate(path)
+        }, 100);
 
     }
 

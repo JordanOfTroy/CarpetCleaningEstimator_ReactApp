@@ -14,8 +14,21 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(estimates)
-  })
+    let check = localStorage.getItem('estimates')
+    check ? updateLocalStorage(estimates) : initiateLocalStorage(estimates)
+  }, [estimates])
+
+  let updateLocalStorage = (arr) => {
+    localStorage.setItem('estimates', JSON.stringify(arr))
+  }
+
+  let initiateLocalStorage = (arr) => {
+    window.localStorage.setItem('estimates', JSON.stringify(arr))
+  }
+
+  let getEstimatesFromLocalStorage = () => {
+    return JSON.parse(localStorage.getItem('estimates'))
+  }
 
 
   return (
