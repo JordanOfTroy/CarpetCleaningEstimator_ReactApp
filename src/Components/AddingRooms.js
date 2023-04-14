@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import RoomList from "./RoomList";
 
 export default function AddingRooms () {
     let { uuid } = useParams();
@@ -13,7 +14,11 @@ export default function AddingRooms () {
 
     return (
         <div>
-            <h1>Hello {customer.firstName}! Please tell us which rooms you would like cleaned. </h1>
+            <p>Hello <span>{customer.firstName}</span>! Please tell us which rooms you would like cleaned. </p>
+            
+            <RoomList
+                customer = {customer}
+            />
         </div>
     )
 }
