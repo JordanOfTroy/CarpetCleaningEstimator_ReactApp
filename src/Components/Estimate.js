@@ -1,10 +1,19 @@
 import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function Estimate () {
     let { uuid } = useParams()
     let customer = {}
     let ppsf = 1
     let grandTotal = 0
+    let homePath = `/`
+    let navigate = useNavigate()
+
+    let goHome = () => {
+        setTimeout(() => {
+            navigate(homePath)
+        }, 100);
+    }
 
     let getCustomer = (custID) => {
         let estimates = JSON.parse(localStorage.getItem('estimates'))
@@ -82,6 +91,9 @@ export default function Estimate () {
     // console.log('customer', customer)
 
     return (
-        <div>{showCustomer()}</div>
+        <div>
+            {showCustomer()}
+            <button onClick={() => goHome()}>Start A New Estimate</button>
+        </div>
     )
 }
