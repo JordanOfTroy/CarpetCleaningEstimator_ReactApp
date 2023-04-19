@@ -23,17 +23,13 @@ export default function RoomList ({customer}) {
     let updateLocalStorage = (obj) => {
         let newArr = []
         let estimates = JSON.parse(localStorage.getItem('estimates'))
-        // console.log(estimates)
         estimates.forEach((estimate, i) => {
-            // console.log(estimate.uuid)
-            // console.log(obj.uuid)
             if (estimate.uuid === obj.uuid) {
                 estimate.areas = obj.areas
             }
             newArr.push(estimate)
         })
         localStorage.setItem('estimates', JSON.stringify(newArr))
-        // let path = 
         setTimeout(() => {
             navigate(`/estimate/${obj.uuid}`)
         }, 100);
@@ -48,11 +44,8 @@ export default function RoomList ({customer}) {
                     roomLength: room.children[1].value,
                     roomWidth: room.children[2].value
                 }
-                // console.log(roomObj)
                 customer.areas.push(roomObj)
-                // console.log('dafuq',roomObj)
             }
-            // console.log('customer', customer)
             updateLocalStorage(customer)
         })
     }

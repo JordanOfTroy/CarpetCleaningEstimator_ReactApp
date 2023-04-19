@@ -19,7 +19,6 @@ export default function Estimate () {
         let estimates = JSON.parse(localStorage.getItem('estimates'))
         estimates.forEach((estimate) => {
             if (estimate.uuid === custID) {
-                // console.log('in function', estimate)
                 customer = {...estimate}
             }
         })
@@ -48,35 +47,8 @@ export default function Estimate () {
         return HTML
     }
 
-    // let displayAreas = (arr) => {
-    //     let HTML = ''
-    //     arr.forEach((ele, i) => {
-    //         let { roomName, roomLength, roomWidth} = ele
-    //         let total = getTotal(roomLength, roomWidth )
-    //         HTML =  <div>
-    //             <p>{roomName} - ${total}</p>
-    //             <p>suck it</p>
-    //             <hr></hr>
-    //             <h1>Grand Total : ${grandTotal}</h1>
-    //         </div>
-    //     })
-    //     return HTML
-    // }
-
-    // let displayAreas = (arr) => {
-    //     let arr2 = []
-    //     arr.forEach((ele, i) => {
-    //         let { roomName, roomLength, roomWidth} = ele
-    //         let total = getTotal(roomLength, roomWidth )
-    //         arr2.push(roomName)
-    //     })
-    //     console.log('arr2', arr2)
-    //     return arr2
-    // }
-
     let showCustomer = () => {
         getCustomer(uuid)
-        // console.log(displayAreas(customer.areas))
         return (
             <>
             <p>Thank you {customer.firstName}. Your carpet cleaning estimate has been outlined below.</p>
@@ -87,8 +59,6 @@ export default function Estimate () {
         )
 
     }
-
-    // console.log('customer', customer)
 
     return (
         <div>
