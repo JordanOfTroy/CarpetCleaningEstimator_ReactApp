@@ -6,6 +6,7 @@ import {
 import './index.css';
 import App from './App';
 import AddingRooms from './Components/AddingRooms';
+import Estimate from './Components/Estimate.js';
 import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: '/addingrooms/:uuid',
     element: <AddingRooms/>
+  },
+  {
+    path: '/estimate/:uuid',
+    element: <Estimate/>
   }
 ])
 
