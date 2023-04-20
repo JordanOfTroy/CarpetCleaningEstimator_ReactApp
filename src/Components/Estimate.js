@@ -26,10 +26,10 @@ export default function Estimate () {
 
     let getTotal = (l, w) => {
         let total = l * w * ppsf
-        console.log("GTB", grandTotal)
+        // console.log("GTB", grandTotal)
         grandTotal += total
-        console.log("GTA", grandTotal)
-        console.log(`~~~~~`)
+        // console.log("GTA", grandTotal)
+        // console.log(`~~~~~`)
         return total
     }
 

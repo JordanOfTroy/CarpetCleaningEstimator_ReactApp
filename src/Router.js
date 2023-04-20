@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import AddingRooms from './Components/AddingRooms';
 import Estimate from './Components/Estimate.js';
 import CustomerInputs from './Components/CustomerInputs';
+import Admin from './Components/Admin';
 
 
 const Router = createBrowserRouter([
@@ -16,6 +17,10 @@ const Router = createBrowserRouter([
     {
       path: '/estimate/:uuid',
       element: <Estimate/>
+    },
+    {
+        path: '/admin',
+        element: <Admin/>
     }
   ])
 
