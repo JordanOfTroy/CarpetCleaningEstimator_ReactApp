@@ -4,17 +4,27 @@ import CustomerInfo from './CustomerInfo'
 
 
 export default function CustomerInputs () {
-    const [estimates, setEstimates] = useState([])
+    const [estimates, setEstimates] = useState(() => {
+        let check = JSON.parse(localStorage.getItem('estimates'))
+        console.log(check)
+        if (check) {
+            return check
+        } else {
+            return []
+        }
+    })
       
       function StartNewEstimate(obj) {
+        let existingEstiamtes = JSON.parse(localStorage.getItem('estimates'))
+        console.log(existingEstiamtes)
         obj.areas = []
-        setEstimates([...estimates, obj])
+        setEstimates([...existingEstiamtes, obj])
       }
     
       useEffect(() => {
-        let check = localStorage.getItem('estimates')
-        check ? updateLocalStorage(estimates) : initiateLocalStorage(estimates)
+        updateLocalStorage(estimates)
       }, [estimates])
+
     
       let updateLocalStorage = (arr) => {
         localStorage.setItem('estimates', JSON.stringify(arr))
