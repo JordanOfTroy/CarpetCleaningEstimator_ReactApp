@@ -53,11 +53,6 @@ export default function RoomList ({customer}) {
     return (
         <>
         <div>
-            <div className="roomHeader">
-                <p>Room Name</p>
-                <p>Length</p>
-                <p>Width</p>
-            </div>
             <div className="rooms">
                 {createInitialRooms()}
             </div>

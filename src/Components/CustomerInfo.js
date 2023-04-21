@@ -10,7 +10,7 @@ export default function CustomerInfo ({StartNewEstimate}) {
         let telephone = document.getElementById('telephone').value
         let email = document.getElementById('email').value
         let uuid = uuidv4()
-        let date = new Date()
+        let date = new Date().toDateString()
         let path = `/addingrooms/${uuid}`
         StartNewEstimate({firstName, lastName, telephone, email, date, uuid})
         clearInputs()

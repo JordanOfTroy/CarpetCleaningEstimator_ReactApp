@@ -1,3 +1,4 @@
+import '../styles/admin.css'
 import EstimateCard from "./EstimateCard";
 
 export default function Admin () {
@@ -13,7 +14,13 @@ export default function Admin () {
 
     return (
         <div>
-            {showAllEstimate()}
+            <div className='pricingInfo'>
+                <p>Price per square foot: $1</p>
+                <button>Update Pricing</button>
+            </div>
+            <div className="cardBox">
+                {showAllEstimate()}
+            </div>
         </div>
     )
 }

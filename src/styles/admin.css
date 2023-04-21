@@ -1,0 +1,23 @@
+.pricingInfo {
+    /* border: solid white 1px; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0em 1em;
+    box-shadow: rgba(128, 128, 128, 0.2) 0px 7px 29px 0px;
+}
+
+.pricingInfo p {
+    margin: 0px;
+    margin-bottom: .5em;
+    font-size: .75em;
+}
+
+.cardBox {
+    /* border: solid white 1px; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
