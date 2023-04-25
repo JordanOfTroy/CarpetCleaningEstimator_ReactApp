@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import '../styles/estimate.css'
 
 export default function Estimate () {
     let { uuid } = useParams()
@@ -39,9 +40,7 @@ export default function Estimate () {
             let { roomName, roomLength, roomWidth} = ele
             let total = getTotal(roomLength, roomWidth )
             HTML.push (
-            <div>
-                <p>{roomName} - ${total}</p>
-            </div>
+                <p className="roomTotal">{roomName} - ${total}</p>
             )
         })
         return HTML
@@ -50,12 +49,18 @@ export default function Estimate () {
     let showCustomer = () => {
         getCustomer(uuid)
         return (
-            <>
-            <p>Thank you {customer.firstName}. Your carpet cleaning estimate has been outlined below.</p>
-            {displayAreas(customer.areas)}
-            <h1>Grand Total : ${grandTotal}</h1>
-            <p>If you would like to schedule an appointment, please call 1-800-GOT-DIRT. Thank you.</p>
-            </>
+            <div className="estimateBreakdown">
+                <div className="estimateHeader">
+                    <p>Thank you {customer.firstName}. Your carpet cleaning estimate has been outlined below.</p>
+                </div>
+                <div className="estimateBody">
+                    {displayAreas(customer.areas)}
+                    <h2>Estimate Total : ${grandTotal}</h2>
+                </div>
+                <div className="estimateFooter">
+                    <p>If you would like to schedule an appointment, please call 1-800-GOT-DIRT. Thank you.</p>
+                </div>
+            </div>
         )
 
     }
@@ -63,7 +68,7 @@ export default function Estimate () {
     return (
         <div>
             {showCustomer()}
-            <button onClick={() => goHome()}>Start A New Estimate</button>
+            <button onClick={() => goHome()}>Start A New Estimate!</button>
         </div>
     )
 }

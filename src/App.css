@@ -1,6 +1,6 @@
 button {
   border: solid 2px #282c34;
-  padding: .5em;
+  padding: 1em;
   margin: 1em;
   border-radius: 100px;
   box-shadow: rgba(128, 128, 128, 0.2) 0px 7px 29px 0px;
@@ -23,6 +23,17 @@ input {
   border-radius: 100px;
   background-color: white;
 }
+
+select {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border: none;
+  margin: .5em;
+  padding: 1em 1.5em;
+  border-radius: 100px;
+  background-color: white;
+}
+
+
 
 /* ---------------- */
 

@@ -29,6 +29,7 @@ export default function CustomerInfo ({StartNewEstimate}) {
 
     return (
         <div className="infoSection CustomerInfo">
+            <p>Please enter your name and contact information.</p>
             <div>
                 <input id='firstName' type='text' placeholder="First Name" required></input>
                 <input id='lastName' type='text' placeholder="Last Name" required></input>
