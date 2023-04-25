@@ -6,7 +6,6 @@ import CustomerInfo from './CustomerInfo'
 export default function CustomerInputs () {
     const [estimates, setEstimates] = useState(() => {
         let check = JSON.parse(localStorage.getItem('estimates'))
-        console.log(check)
         if (check) {
             return check
         } else {
@@ -30,13 +29,6 @@ export default function CustomerInputs () {
         localStorage.setItem('estimates', JSON.stringify(arr))
       }
     
-      let initiateLocalStorage = (arr) => {
-        window.localStorage.setItem('estimates', JSON.stringify(arr))
-      }
-    
-      let getEstimatesFromLocalStorage = () => {
-        return JSON.parse(localStorage.getItem('estimates'))
-      }
       
     return (
         <div>
